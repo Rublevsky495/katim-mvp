@@ -2017,3 +2017,14 @@ textarea.field {
   content: none !important;
   background: none !important;
 }
+
+/* DEBUG map layers */
+#screen-search .search-map {
+  outline: 4px solid red !important;
+  background: #111 !important;
+}
+
+#screen-search .offers-sheet {
+  outline: 4px solid blue !important;
+  opacity: .75 !important;
+}
