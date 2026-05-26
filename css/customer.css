@@ -2087,14 +2087,6 @@ textarea.field {
   z-index: 2 !important;
 }
 
-/* HARD TEST */
-#screen-search .search-map {
-  background: red !important;
-}
-
-#screen-search .search-map-img {
-  display: none !important;
-}
 
 /* FINAL: restore real map container size */
 #screen-search .search-map {
