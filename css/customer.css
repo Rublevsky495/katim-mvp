@@ -2109,3 +2109,19 @@ textarea.field {
   display: block !important;
   z-index: 0 !important;
 }
+
+/* Mobile: keep search filters visible */
+@media (max-width: 430px) {
+  #screen-search.executor-search {
+    padding-top: 92px !important;
+  }
+
+  #screen-search .executor-filters {
+    flex-shrink: 0 !important;
+    position: relative !important;
+    z-index: 30 !important;
+    margin-top: 8px !important;
+    margin-bottom: 14px !important;
+    overflow-x: auto !important;
+  }
+}
