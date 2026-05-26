@@ -2140,3 +2140,22 @@ textarea.field {
     margin-top: 0 !important;
   }
 }
+
+/* Mobile: make search map image fill container */
+@media (max-width: 430px) {
+  #screen-search .search-map {
+    width: calc(100vw - 28px) !important;
+    max-width: none !important;
+    height: 260px !important;
+    min-height: 260px !important;
+    flex: 0 0 260px !important;
+    margin: 0 auto 12px !important;
+  }
+
+  #screen-search .search-map-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transform: scale(1.04) !important;
+  }
+}
