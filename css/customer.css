@@ -2286,3 +2286,34 @@ textarea.field {
     margin: 0 0 14px !important;
   }
 }
+
+/* Fix filters being clipped under header on search screen */
+@media (max-width: 430px) {
+  #screen-search.executor-search {
+    padding-top: 64px !important;
+    overflow-y: auto !important;
+  }
+
+  #screen-search .executor-filters {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 80 !important;
+    background: #000 !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
+    height: 56px !important;
+    min-height: 56px !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+  }
+
+  #screen-search .executor-filter-btn,
+  #screen-search .executor-filter-btn.active {
+    height: 40px !important;
+    min-height: 40px !important;
+    line-height: 40px !important;
+    padding: 0 14px !important;
+  }
+}
