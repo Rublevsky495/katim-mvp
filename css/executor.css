@@ -415,3 +415,68 @@
     border: 0;
     cursor: pointer;
 }
+
+/* EXECUTOR MAP + OFFERS */
+
+.map-status {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 11px;
+    border-radius: 16px;
+    background: rgba(12,16,24,0.78);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+}
+
+.map-status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #43e66d;
+    box-shadow: 0 0 16px rgba(67,230,109,0.7);
+}
+
+.user-pin {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: rgba(0,122,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.master-pin {
+    position: absolute;
+    z-index: 2;
+}
+
+.map-service-dot {
+    position: absolute;
+    z-index: 2;
+}
+
+.offers-sheet {
+    position: relative;
+    z-index: 4;
+}
+
+.master-offers {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.offer-card {
+    display: grid;
+}
