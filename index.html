@@ -62,7 +62,19 @@
             margin: 0 auto;
         }
 
-        
+        @media (max-width: 500px) {
+            body {
+                padding: 0;
+                align-items: stretch;
+            }
+
+            #app-container {
+                height: 100vh;
+                height: 100dvh;
+                min-height: 0;
+                max-width: none;
+                border-radius: 0;
+            }
         }
 
         @media (max-height: 700px) and (min-width: 501px) {
@@ -270,6 +282,20 @@
         }
 
         /* Status Bar Simulation */
+        .status-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 44px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 100;
+        }
 
         /* Common Elements */
         .btn {
@@ -2692,12 +2718,19 @@
         .hidden { display: none; }
     </style>
 <link href="css/customer.css" rel="stylesheet"/>
-<link rel="stylesheet" href="css/executor.css?v=1">
+<link href="css/executor.css" rel="stylesheet"/>
 <link rel="stylesheet" href="css/search-screen.css?v=1">
 </head>
 <body>
 <div id="app-container">
 <!-- Mock Status Bar -->
+<div class="status-bar">
+<span>9:41</span>
+<div style="display:flex; gap: 5px;">
+<i class="fas fa-signal"></i>
+<i class="fas fa-wifi"></i>
+<i class="fas fa-battery-full"></i>
+</div>
 </div>
 <!-- 1. ONBOARDING -->
 <div class="screen" id="screen-onboarding">
@@ -3312,7 +3345,7 @@
 	<div style="font-weight:800; margin-bottom:10px;">Быстрые действия</div>
 	<div class="quick-actions">
 	<button class="quick-action" onclick="showScreen('screen-exec-orders')"><i class="fas fa-car"></i>Заказы</button>
-	<button class="quick-action" onclick="showScreen('screen-exec-map')"><i class="fas fa-map-marker-alt"></i>Карта</button>
+	<button class="quick-action" onclick="alert('Карта исполнителя в разработке')"><i class="fas fa-map-marker-alt"></i>Карта</button>
 	<button class="quick-action" onclick="showScreen('screen-exec-income')"><i class="fas fa-chart-bar"></i>Доходы</button>
 	<button class="quick-action" onclick="showScreen('screen-exec-profile')"><i class="far fa-user"></i>Профиль</button>
 	</div>
