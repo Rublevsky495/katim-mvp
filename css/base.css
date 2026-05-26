@@ -412,3 +412,20 @@ body {
     margin-bottom: 140px !important;
   }
 }
+
+/* Mobile scroll fixes */
+@media (max-width: 500px) {
+  #app-container {
+    overflow: hidden;
+  }
+
+  .screen {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 120px;
+  }
+
+  #screen-home {
+    padding-bottom: 150px;
+  }
+}

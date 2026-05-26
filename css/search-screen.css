@@ -78,3 +78,20 @@
 #screen-search .offers-sheet {
   margin-top: 0 !important;
 }
+
+/* Mobile search filters visibility */
+@media (max-width: 500px) {
+  #screen-search.executor-search {
+    padding-top: 72px !important;
+  }
+
+  #screen-search .executor-filters {
+    flex-shrink: 0 !important;
+    min-height: 48px !important;
+    padding-top: 4px !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 12px !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+  }
+}
