@@ -68,7 +68,7 @@ body {
         height: 100vh;
         height: 100dvh;
         min-height: 0;
-        max-width: none;
+        max-width: 430px;
         border-radius: 0;
     }
 }
