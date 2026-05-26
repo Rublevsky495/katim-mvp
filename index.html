@@ -3978,6 +3978,10 @@
 	            updateOrderView();
 	            renderMasterOffers();
 	            showScreen('screen-search');
+            setTimeout(() => {
+                const filters = document.querySelector('#screen-search .executor-filters');
+                if (filters) filters.scrollLeft = 0;
+            }, 50);
             clearTimeout(window.searchTimer);
         }
 
