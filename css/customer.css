@@ -2095,3 +2095,25 @@ textarea.field {
 #screen-search .search-map-img {
   display: none !important;
 }
+
+/* FINAL: restore real map container size */
+#screen-search .search-map {
+  display: block !important;
+  width: 100% !important;
+  height: 240px !important;
+  min-height: 240px !important;
+  flex: 0 0 240px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  background: #061018 !important;
+}
+
+#screen-search .search-map-img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  z-index: 0 !important;
+}
