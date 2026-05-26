@@ -2054,3 +2054,35 @@ textarea.field {
   display: none !important;
   content: none !important;
 }
+
+#screen-search .search-map {
+  position: relative !important;
+  overflow: hidden !important;
+  background: #061018 !important;
+}
+
+#screen-search .search-map-img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  z-index: 0 !important;
+  transform: scale(1.03) !important;
+}
+
+#screen-search .search-map::before,
+#screen-search .search-map::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+
+#screen-search .map-status,
+#screen-search .user-pin,
+#screen-search .master-pin,
+#screen-search .map-service-dot {
+  position: absolute !important;
+  z-index: 2 !important;
+}
