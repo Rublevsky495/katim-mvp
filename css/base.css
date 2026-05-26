@@ -430,3 +430,29 @@ body {
     margin: 0 !important;
   }
 }
+
+/* Keep real mobile app width, without fake phone frame */
+@media (max-width: 500px) {
+  body {
+    padding: 0 !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    overflow: hidden !important;
+  }
+
+  #app-container {
+    width: 100% !important;
+    max-width: 430px !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    overflow: hidden !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 auto !important;
+  }
+
+  .screen {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+}
