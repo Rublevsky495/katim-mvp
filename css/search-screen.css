@@ -78,3 +78,22 @@
 #screen-search .offers-sheet {
   margin-top: 0 !important;
 }
+
+/* Restore app shell after removing phone chrome */
+body {
+  padding: 16px !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  overflow: auto !important;
+}
+
+#app-container {
+  width: 100% !important;
+  max-width: 430px !important;
+  height: min(932px, calc(100dvh - 32px)) !important;
+  min-height: 620px !important;
+  margin: 0 auto !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
