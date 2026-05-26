@@ -1880,3 +1880,16 @@ textarea.field {
     margin-bottom: 56px !important;
   }
 }
+
+@media (max-width: 430px) {
+  #screen-history .history-list {
+    margin-top: 28px !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  #screen-history .history-tabs {
+    position: relative !important;
+    z-index: 20 !important;
+  }
+}
