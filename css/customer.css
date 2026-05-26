@@ -1933,3 +1933,12 @@ textarea.field {
     padding-bottom: 140px !important;
   }
 }
+
+/* Search map realistic background */
+#screen-search .search-map {
+  background:
+    linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.30)),
+    url("../assets/map-dark.png") !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
