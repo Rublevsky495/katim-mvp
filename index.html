@@ -262,10 +262,13 @@
 
         .screen {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: auto;
+            min-height: 100dvh;
             display: none;
             flex-direction: column;
             background:
@@ -284,6 +287,8 @@
         /* Status Bar Simulation */
         .status-bar {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             top: 0;
             left: 0;
             width: 100%;
@@ -327,6 +332,8 @@
         /* Bottom Nav */
         .bottom-nav {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             bottom: 0;
             left: 0;
             width: 100%;
@@ -628,6 +635,8 @@
 
         .back-btn {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             left: 0;
             font-size: 20px;
             cursor: pointer;
@@ -749,8 +758,11 @@
 
         .radar-circle {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             width: 100%;
-            height: 100%;
+            height: auto;
+            min-height: 100dvh;
             border: 2px solid rgba(255, 77, 0, 0.1);
             border-radius: 50%;
             animation: pulse 2s infinite ease-out;
@@ -778,6 +790,8 @@
 
         .eta-badge {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             top: 20px;
             right: -20px;
             background: var(--card-bg);
@@ -890,6 +904,8 @@
         .search-map::after {
             content: "";
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             inset: 0;
             background:
                 radial-gradient(circle at 50% 52%, rgba(10,132,255,0.18), transparent 18%),
@@ -898,6 +914,8 @@
 
         .map-status {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             top: 14px;
             left: 14px;
             z-index: 2;
@@ -933,6 +951,8 @@
 
         .user-pin {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             left: 50%;
             top: 45%;
             z-index: 2;
@@ -960,6 +980,8 @@
 
         .master-pin {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             z-index: 2;
             display: flex;
             align-items: center;
@@ -992,6 +1014,8 @@
 
         .map-service-dot {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             z-index: 2;
             width: 13px;
             height: 13px;
@@ -1019,6 +1043,8 @@
         .offers-sheet::before {
             content: "";
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             top: 8px;
             left: 50%;
             width: 44px;
@@ -1030,6 +1056,8 @@
 
         .map-order-strip {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             left: 12px;
             right: 12px;
             bottom: 12px;
@@ -1122,6 +1150,8 @@
         .offer-avatar::after {
             content: "";
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             right: 1px;
             bottom: 2px;
             width: 12px;
@@ -1275,7 +1305,8 @@
 
         .map-view img {
             width: 100%;
-            height: 100%;
+            height: auto;
+            min-height: 100dvh;
             object-fit: cover;
         }
 
@@ -1302,6 +1333,8 @@
         .active-map::after {
             content: "";
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             inset: 0;
             background:
                 radial-gradient(circle at 54% 48%, rgba(255,196,0,0.13), transparent 25%),
@@ -1310,6 +1343,8 @@
 
         .route-line {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             left: 31%;
             top: 38%;
             z-index: 2;
@@ -1323,6 +1358,8 @@
 
         .active-pin {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             z-index: 3;
             width: 48px;
             height: 48px;
@@ -1359,6 +1396,8 @@
 
         .eta-panel {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             left: 14px;
             right: 14px;
             bottom: 14px;
@@ -1823,6 +1862,8 @@
         .exec-route-map::before {
             content: "";
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             inset: 0;
             background: radial-gradient(circle at 72% 35%, rgba(255,196,0,0.28), transparent 18%),
                         radial-gradient(circle at 24% 72%, rgba(10,132,255,0.22), transparent 22%);
@@ -1830,6 +1871,8 @@
 
         .exec-map-pin {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             z-index: 2;
             width: 38px;
             height: 38px;
@@ -2271,6 +2314,8 @@
 
         .home-map-glow {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             right: -12px;
             top: 20px;
             width: 112px;
@@ -2289,6 +2334,8 @@
         .home-map-glow::after {
             content: "";
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             inset: 18px;
             border-radius: 50%;
             border: 1px solid rgba(255,196,0,0.14);
@@ -2437,6 +2484,8 @@
 
         .service-card .card-arrow {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             right: 11px;
             bottom: 13px;
             color: rgba(255,255,255,0.5);
@@ -2445,6 +2494,8 @@
 
         .new-badge {
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             top: 9px;
             right: 9px;
             padding: 3px 7px;
@@ -2654,6 +2705,8 @@
         #screen-search .search-map::before {
             content: "";
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             inset: 0;
             z-index: 0;
             background:
@@ -2696,6 +2749,8 @@
         #screen-active-order .active-map::before {
             content: "";
             position: absolute;
+            min-height: auto;
+            min-height: 100dvh;
             inset: 0;
             z-index: 0;
             background:
@@ -3601,7 +3656,9 @@
 	</div>
 	</nav>
 <!-- Home Indicator -->
-<div style="position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 134px; height: 5px; background: white; border-radius: 100px; z-index: 100;"></div>
+<div style="position: absolute;
+            min-height: auto;
+            min-height: 100dvh; bottom: 8px; left: 50%; transform: translateX(-50%); width: 134px; height: 5px; background: white; border-radius: 100px; z-index: 100;"></div>
 </div>
 <script>
         const services = {
