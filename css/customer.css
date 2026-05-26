@@ -1942,3 +1942,20 @@ textarea.field {
   background-size: cover !important;
   background-position: center !important;
 }
+
+/* Force real search map image visible */
+#screen-search .search-map::before {
+  display: none !important;
+}
+
+#screen-search .search-map::after {
+  background: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.18)) !important;
+}
+
+#screen-search .search-map {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.20)),
+    url("../assets/map-dark.png") !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
