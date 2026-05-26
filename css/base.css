@@ -371,3 +371,28 @@ body {
     z-index: 40;
     pointer-events: none;
 }
+
+@supports (padding: max(0px)) {
+  .screen {
+    padding-bottom: max(110px, env(safe-area-inset-bottom));
+  }
+
+  .bottom-nav {
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-height: 760px) {
+  .hero-section,
+  .customer-home-hero,
+  .executor-home-hero {
+    padding-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  .sos-card,
+  .bonus-card,
+  .executor-bonus-card {
+    margin-bottom: 120px;
+  }
+}
