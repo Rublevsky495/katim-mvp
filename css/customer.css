@@ -1975,3 +1975,20 @@ textarea.field {
   display: none !important;
   content: none !important;
 }
+
+/* Force real dark map, kill decorative overlay */
+#screen-search .search-map {
+  background-image:
+    linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.20)),
+    url('/assets/map-dark.png?v=2') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+#screen-search .search-map::before,
+#screen-search .search-map::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
