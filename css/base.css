@@ -438,3 +438,16 @@ body {
     padding-bottom: 180px !important;
   }
 }
+
+/* Mobile: fix home screen flex scroll */
+@media (max-width: 500px) {
+  #screen-home.active {
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-y: auto !important;
+    min-height: 0 !important;
+    height: 100% !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 180px !important;
+  }
+}
