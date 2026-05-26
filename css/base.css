@@ -412,32 +412,3 @@ body {
     margin-bottom: 140px !important;
   }
 }
-
-
-/* Mobile app shell: no fake phone chrome, keep app layout usable */
-@media (max-width: 500px) {
-  body {
-    padding: 0 !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-    overflow: hidden !important;
-  }
-
-  #app-container {
-    width: 100% !important;
-    max-width: 430px !important;
-    height: 100dvh !important;
-    min-height: 100dvh !important;
-    margin: 0 auto !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    overflow: hidden !important;
-  }
-
-  .screen {
-    height: 100% !important;
-    min-height: 100% !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch;
-  }
-}
