@@ -1938,7 +1938,7 @@ textarea.field {
 #screen-search .search-map {
   background:
     linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.30)),
-    url("../assets/map-dark.png") !important;
+    url("../assets/map-dark.png?v=2") !important;
   background-size: cover !important;
   background-position: center !important;
 }
@@ -1955,7 +1955,7 @@ textarea.field {
 #screen-search .search-map {
   background-image:
     linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.20)),
-    url("../assets/map-dark.png") !important;
+    url("../assets/map-dark.png?v=2") !important;
   background-size: cover !important;
   background-position: center !important;
 }
