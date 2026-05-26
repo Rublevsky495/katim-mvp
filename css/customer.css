@@ -1901,3 +1901,35 @@ textarea.field {
     backface-visibility: hidden !important;
   }
 }
+
+@media (max-width: 430px) {
+  #screen-history {
+    display: none;
+  }
+
+  #screen-history.active {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    padding-top: 88px !important;
+    overflow-y: auto !important;
+  }
+
+  #screen-history .screen-header {
+    flex-shrink: 0 !important;
+  }
+
+  #screen-history .history-tabs {
+    flex-shrink: 0 !important;
+    position: static !important;
+    transform: none !important;
+    margin: 0 0 18px 0 !important;
+    overflow-x: auto !important;
+  }
+
+  #screen-history .history-list {
+    flex: 1 0 auto !important;
+    margin-top: 0 !important;
+    padding-bottom: 140px !important;
+  }
+}
