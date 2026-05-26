@@ -1851,3 +1851,25 @@ textarea.field {
     padding-bottom: 140px !important;
   }
 }
+
+@media (max-width: 430px) {
+  #screen-history {
+    padding-top: 96px !important;
+  }
+
+  #screen-history .screen-header {
+    position: absolute !important;
+    top: 44px !important;
+    left: 20px !important;
+    right: 20px !important;
+    z-index: 30 !important;
+  }
+
+  #screen-history .history-tabs {
+    flex-wrap: nowrap !important;
+    margin-top: 18px !important;
+    overflow-x: auto !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+}
