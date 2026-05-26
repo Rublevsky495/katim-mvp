@@ -2086,3 +2086,12 @@ textarea.field {
   position: absolute !important;
   z-index: 2 !important;
 }
+
+/* HARD TEST */
+#screen-search .search-map {
+  background: red !important;
+}
+
+#screen-search .search-map-img {
+  display: none !important;
+}
