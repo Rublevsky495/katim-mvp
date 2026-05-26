@@ -1965,3 +1965,13 @@ textarea.field {
   content: none !important;
   display: none !important;
 }
+
+#screen-search .search-map {
+  background: url("../assets/map-dark.png?v=2") center center / cover no-repeat !important;
+}
+
+#screen-search .search-map::before,
+#screen-search .search-map::after {
+  display: none !important;
+  content: none !important;
+}
