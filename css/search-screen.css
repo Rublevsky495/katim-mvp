@@ -1,0 +1,80 @@
+/* Search screen clean overrides */
+
+#screen-search.executor-search {
+  padding: 56px 14px 28px !important;
+  gap: 10px !important;
+  overflow-y: auto !important;
+}
+
+#screen-search .executor-header {
+  flex-shrink: 0 !important;
+  margin-bottom: 8px !important;
+}
+
+#screen-search .executor-filters {
+  display: flex !important;
+  gap: 8px !important;
+  width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  flex-shrink: 0 !important;
+  margin: 0 0 12px 0 !important;
+  padding: 0 0 4px 0 !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+#screen-search .executor-filter-btn,
+#screen-search .executor-filter-btn.active {
+  flex: 0 0 auto !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  padding: 0 14px !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+  transform: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#screen-search .search-map {
+  position: relative !important;
+  width: 100% !important;
+  height: 230px !important;
+  min-height: 230px !important;
+  flex: 0 0 230px !important;
+  margin: 0 0 12px 0 !important;
+  overflow: hidden !important;
+  border-radius: 24px !important;
+  background: #061018 !important;
+  isolation: auto !important;
+}
+
+#screen-search .search-map-img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  z-index: 0 !important;
+}
+
+#screen-search .search-map::before,
+#screen-search .search-map::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+
+#screen-search .map-status,
+#screen-search .user-pin,
+#screen-search .master-pin,
+#screen-search .map-service-dot {
+  position: absolute !important;
+  z-index: 2 !important;
+}
+
+#screen-search .offers-sheet {
+  margin-top: 0 !important;
+}
