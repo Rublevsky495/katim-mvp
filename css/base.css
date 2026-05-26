@@ -412,3 +412,21 @@ body {
     margin-bottom: 140px !important;
   }
 }
+
+/* Remove mobile phone mock frame */
+@media (max-width: 500px) {
+  body {
+    padding: 0 !important;
+    align-items: stretch !important;
+  }
+
+  #app-container {
+    max-width: none !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+  }
+}
