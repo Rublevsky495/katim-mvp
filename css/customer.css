@@ -2159,3 +2159,29 @@ textarea.field {
     transform: scale(1.04) !important;
   }
 }
+
+/* Fix excessive top gap on search screen */
+@media (max-width: 430px) {
+  #screen-search.executor-search {
+    padding-top: 54px !important;
+    gap: 8px !important;
+  }
+
+  #screen-search .executor-header {
+    margin-bottom: 6px !important;
+  }
+
+  #screen-search .executor-filters {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+    padding-bottom: 4px !important;
+    min-height: 48px !important;
+  }
+
+  #screen-search .search-map {
+    margin-top: 0 !important;
+    height: 250px !important;
+    min-height: 250px !important;
+    flex-basis: 250px !important;
+  }
+}
