@@ -1959,3 +1959,9 @@ textarea.field {
   background-size: cover !important;
   background-position: center !important;
 }
+
+#screen-search .search-map::before,
+#screen-search .search-map::after {
+  content: none !important;
+  display: none !important;
+}
