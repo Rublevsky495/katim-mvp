@@ -1875,7 +1875,6 @@ textarea.field {
 }
 
 @media (max-width: 430px) {
-  #screen-history .
   #screen-history .history-tabs {
     transform: translateY(42px) !important;
     margin-bottom: 56px !important;
