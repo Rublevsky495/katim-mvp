@@ -1749,3 +1749,14 @@ textarea.field {
 
 /* Hide elements by default */
 .hidden { display: none; }
+
+/* iPhone Safari: lift SOS above browser/bottom nav */
+@media (max-width: 430px) {
+  #screen-home {
+    padding-bottom: 180px !important;
+  }
+
+  #screen-home .sos-btn {
+    margin-bottom: 120px !important;
+  }
+}
