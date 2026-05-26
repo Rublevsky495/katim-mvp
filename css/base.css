@@ -429,3 +429,12 @@ body {
     padding-bottom: 150px;
   }
 }
+
+/* Mobile: restore home screen scrolling */
+@media (max-width: 500px) {
+  #screen-home {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 180px !important;
+  }
+}
