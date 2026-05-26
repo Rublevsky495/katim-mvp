@@ -1749,3 +1749,32 @@ textarea.field {
 
 /* Hide elements by default */
 .hidden { display: none; }
+
+/* iPhone Safari layout stabilization */
+@media (max-width: 430px) {
+
+  .bottom-nav {
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    height: 96px;
+  }
+
+  #screen-home,
+  #screen-history,
+  .executor-screen {
+    padding-bottom: 140px !important;
+  }
+
+  .history-tabs,
+  .executor-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #050607;
+    padding-top: 6px;
+    padding-bottom: 10px;
+  }
+
+  .sos-btn {
+    margin-bottom: 24px !important;
+  }
+}
