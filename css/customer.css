@@ -1893,3 +1893,11 @@ textarea.field {
     z-index: 20 !important;
   }
 }
+
+@media (max-width: 430px) {
+  #screen-history .history-tabs {
+    transform: translateZ(0) !important;
+    will-change: transform !important;
+    backface-visibility: hidden !important;
+  }
+}
