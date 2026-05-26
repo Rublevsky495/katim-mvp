@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Катим - Помощь на дороге 24/7</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/base.css"/>
+<link rel="stylesheet" href="css/customer.css"/>
+<link rel="stylesheet" href="css/executor.css"/>
+
+</head>
+<body>
+<div id="app-container">
+<!-- Mock Status Bar -->
+<div class="status-bar">
+<span>9:41</span>
+<div style="display:flex; gap: 5px;">
+<i class="fas fa-signal"></i>
+<i class="fas fa-wifi"></i>
+<i class="fas fa-battery-full"></i>
+</div>
+</div>
+<!-- 1. ONBOARDING -->
+<div class="screen" id="screen-onboarding">
+<img alt="Logo" class="logo-main" src="assets/image-1.png"/>
+<p class="slogan">помощь на дороге 24/7</p>
+<h1 class="hero-title">Быстрая помощь<br/>на дороге<br/>в любой ситуации</h1>
+<div class="features">
+<div class="feature-item">
+<div class="feature-icon"><i class="far fa-clock"></i></div>
+<div class="feature-text">Точное время прибытия</div>
+</div>
+<div class="feature-item">
+<div class="feature-icon"><i class="fas fa-ruble-sign"></i></div>
+<div class="feature-text">Фиксированная цена заранее</div>
+</div>
+<div class="feature-item">
+<div class="feature-icon"><i class="far fa-credit-card"></i></div>
+<div class="feature-text">Любой способ оплаты</div>
+</div>
+<div class="feature-item">
+<div class="feature-icon"><i class="far fa-check-circle"></i></div>
+<div class="feature-text">Проверенные мастера</div>
+</div>
+<div class="feature-item">
+<div class="feature-icon"><i class="fas fa-headset"></i></div>
+<div class="feature-text">Поддержка 24/7</div>
+</div>
+</div>
+<button class="btn btn-primary" onclick="finishOnboarding()" style="margin-bottom: 20px;">Начать</button>
+<div class="store-badges" style="display: flex; gap: 10px; justify-content: center; margin-bottom: 20px;">
+<div style="background: black; border: 1px solid #333; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; gap: 8px; font-size: 10px;">
+<i class="fab fa-apple" style="font-size: 20px;"></i>
+<div><span>Download on the</span><br/><span style="font-size: 14px; font-weight: 700;">App Store</span></div>
+</div>
+<div style="background: black; border: 1px solid #333; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; gap: 8px; font-size: 10px;">
+<i class="fab fa-google-play" style="font-size: 20px;"></i>
+<div><span>GET IT ON</span><br/><span style="font-size: 14px; font-weight: 700;">Google Play</span></div>
+</div>
+</div>
+<img alt="Van" class="main-img" src="assets/image-2.png"/>
+</div>
+<!-- 2. HOME -->
+<div class="screen" id="screen-home">
+<div class="screen-header" style="justify-content: flex-start;">
+<div class="brand-mark">
+<div class="brand-symbol">К</div>
+<div>
+<div class="brand-title">Кати</div>
+<div class="brand-subtitle">помощь на дороге 24/7</div>
+</div>
+</div>
+<i class="far fa-bell home-bell"></i>
+</div>
+<section class="home-hero">
+<div class="home-map-glow"></div>
+<div class="location-picker">
+<i class="fas fa-location-arrow"></i>
+<span>Москва и МО</span>
+<i class="fas fa-chevron-down" style="font-size: 10px;"></i>
+</div>
+<h2 class="home-title">Нужна помощь<br/>на дороге?</h2>
+<p class="home-lead">Проверенный мастер, понятная цена и прибытие рядом с вами.</p>
+<div class="home-metrics">
+<div>
+<strong>15-25</strong>
+<span>минут</span>
+</div>
+<div>
+<strong>4.9</strong>
+<span>рейтинг</span>
+</div>
+<div>
+<strong>24/7</strong>
+<span>сервис</span>
+</div>
+</div>
+</section>
+<div class="section-label">
+<span>Выберите услугу</span>
+<small>цена до заказа</small>
+</div>
+<div class="services-grid">
+<div class="service-card selected" data-service="tire" onclick="selectService('tire')">
+<div class="service-icon"><i class="fas fa-compact-disc"></i></div>
+<span>Шиномонтаж</span>
+<em>Выездной шиномонтаж</em>
+<small>от 1 500 ₽</small>
+<i class="fas fa-chevron-right card-arrow"></i>
+</div>
+<div class="service-card" data-service="tow" onclick="selectService('tow')">
+<div class="service-icon"><i class="fas fa-truck-pickup"></i></div>
+<span>Эвакуатор</span>
+<em>Быстрая подача</em>
+<small>от 2 500 ₽</small>
+<i class="fas fa-chevron-right card-arrow"></i>
+</div>
+<div class="service-card" data-service="battery" onclick="selectService('battery')">
+<div class="service-icon"><i class="fas fa-bolt"></i></div>
+<span>Аккумулятор</span>
+<em>Запуск и замена АКБ</em>
+<small>от 800 ₽</small>
+<i class="fas fa-chevron-right card-arrow"></i>
+</div>
+<div class="service-card" data-service="other" onclick="selectService('other')">
+<div class="new-badge">НОВОЕ</div>
+<div class="service-icon"><i class="fas fa-warehouse"></i></div>
+<span>СТО рядом</span>
+<em>Диагностика и ремонт</em>
+<small>от 1 800 ₽</small>
+<i class="fas fa-chevron-right card-arrow"></i>
+</div>
+</div>
+<div class="sos-btn" onclick="selectService('sos')">
+<div class="sos-icon"><i class="fas fa-bolt"></i></div>
+<div>
+<div class="sos-title">SOS</div>
+<div class="sos-subtitle">Экстренная помощь, мастер приедет быстрее обычного</div>
+</div>
+<i class="fas fa-chevron-right sos-arrow"></i>
+</div>
+<!-- Nav bar is outside screens to be persistent, but for some we hide it. -->
+</div>
+<!-- 3. ORDER CREATE -->
+<div class="screen" id="screen-order-create">
+<div class="screen-header">
+<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-home')"></i>
+<div class="screen-title">Создание заказа</div>
+</div>
+<div class="order-step">
+<div class="step-number">1</div>
+<div class="step-content">
+<div style="display:flex; justify-content:space-between;">
+<span class="step-label">Услуга</span>
+<a class="step-edit" onclick="showScreen('screen-home')">Изменить</a>
+</div>
+<div class="step-value" id="order-service">Шиномонтаж выездной<br/>Замена колеса (1 шт.)</div>
+</div>
+</div>
+<div class="order-step">
+<div class="step-number">2</div>
+<div class="step-content">
+<div style="display:flex; justify-content:space-between;">
+<span class="step-label">Местоположение</span>
+<a class="step-edit" onclick="focusField('location-input')">Изменить</a>
+</div>
+<div class="step-value" id="order-location">Ленинградское ш., 16к1<br/>(уточнено)</div>
+<input class="field" id="location-input" placeholder="Где вы находитесь?" value="Ленинградское ш., 16к1"/>
+</div>
+</div>
+<div class="order-step">
+<div class="step-number">3</div>
+<div class="step-content">
+<span class="step-label">Фото</span>
+<div class="step-value">2 фото</div>
+<div class="photos-row">
+<img alt="Tire" class="photo-thumb" src="assets/image-3.png"/>
+<img alt="Car" class="photo-thumb" src="assets/image-3.png" style="object-position: right;"/>
+<div class="add-photo"><i class="fas fa-plus"></i></div>
+</div>
+</div>
+</div>
+<div class="order-step">
+<div class="step-number">4</div>
+<div class="step-content">
+<div style="display:flex; justify-content:space-between;">
+<span class="step-label">Комментарий</span>
+<a class="step-edit" onclick="focusField('comment-input')">Изменить</a>
+</div>
+<div class="step-value" id="order-comment">Прокол заднего колеса<br/>Toyota Camry, черный</div>
+<textarea class="field" id="comment-input" placeholder="Опишите проблему">Прокол заднего колеса. Toyota Camry, черный</textarea>
+</div>
+</div>
+<div class="order-step">
+<div class="step-number">5</div>
+<div class="step-content">
+<div style="display:flex; justify-content:space-between;">
+<span class="step-label">Способ оплаты</span>
+<a class="step-edit" href="#" id="payment-step-edit">Изменить</a>
+</div>
+<div class="step-value"><i class="far fa-credit-card"></i> Карта онлайн</div>
+</div>
+</div>
+<div class="order-step">
+<div class="step-number" style="background: black; color: white;">6</div>
+<div class="step-content">
+<span class="step-label">Итоговая цена</span>
+<div class="step-value" id="order-price" style="font-size: 20px; font-weight: 700;">1 500 ₽</div>
+<div class="hint-row"><span id="order-eta">Время прибытия от 20 мин</span><span id="order-id-preview">№123456</span></div>
+</div>
+</div>
+<button class="btn btn-primary" onclick="startSearch()">Подтвердить заказ</button>
+</div>
+<!-- 4. SEARCHING -->
+<div class="screen executor-search" id="screen-search">
+<div class="executor-header">
+<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-order-create')"></i>
+<div class="screen-title">
+<div id="executor-title" style="font-size: 22px; font-weight: 800;">Ищем исполнителей</div>
+<div style="color: var(--text-gray); font-size: 13px; margin-top: 3px;">сервисы рядом с вами <span style="color:#43e66d;">●</span> онлайн</div>
+</div>
+<button class="cancel-pill" onclick="showScreen('screen-order-create')">Отменить</button>
+</div>
+<div class="executor-filters">
+<button class="executor-filter-btn active" onclick="setExecutorFilter('all')">Все <span id="filter-all-count">12</span></button>
+<button class="executor-filter-btn" onclick="setExecutorFilter('sto')">СТО</button>
+<button class="executor-filter-btn" onclick="setExecutorFilter('tire')">Шиномонтаж</button>
+<button class="executor-filter-btn" onclick="setExecutorFilter('tow')">Эвакуаторы</button>
+<button class="executor-filter-btn" onclick="setExecutorFilter('other')">Другие</button>
+</div>
+<div class="search-map">
+<div class="map-status">
+<div class="map-status-dot"></div>
+<div>
+<strong>Ищем ближайших мастеров</strong>
+<span>Обычно это занимает 30-60 сек.</span>
+</div>
+</div>
+<div class="user-pin"><i class="fas fa-map-marker-alt"></i></div>
+<div class="master-pin pin-a"><div class="pin-avatar">А</div><div><strong>8 мин</strong><br/>2 200 ₽</div></div>
+<div class="master-pin pin-b"><div class="pin-avatar">М</div><div><strong>12 мин</strong><br/>2 500 ₽</div></div>
+<div class="master-pin pin-c"><div class="pin-avatar">Д</div><div><strong>10 мин</strong><br/>2 400 ₽</div></div>
+<div class="master-pin pin-d"><div class="pin-avatar">С</div><div><strong>14 мин</strong><br/>1 800 ₽</div></div>
+<div class="map-service-dot dot-a"></div>
+<div class="map-service-dot dot-b"></div>
+<div class="map-service-dot dot-c"></div>
+</div>
+<div class="offers-sheet">
+<div class="offers-title">
+<div>
+<h3>Поступающие предложения</h3>
+<span>Обновляется в реальном времени</span>
+</div>
+<span style="color: var(--gold);"><i class="fas fa-circle"></i> LIVE</span>
+</div>
+<div class="master-offers" id="master-offers"></div>
+<div class="verified-note">
+<i class="fas fa-shield-alt"></i>
+<div>
+<strong>Все мастера проверены</strong>
+<span>Мы проверяем документы и отзывы о каждом исполнителе</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 5. ACTIVE ORDER -->
+<div class="screen active-order-screen" id="screen-active-order">
+<div class="screen-header">
+<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-search')"></i>
+<div class="screen-title">Заказ в работе</div>
+</div>
+<div class="active-map">
+<div class="route-line"></div>
+<div class="active-pin master-car-pin"><i class="fas fa-car-side"></i></div>
+<div class="active-pin client-pin"><i class="fas fa-map-marker-alt"></i></div>
+<div class="eta-panel">
+<div>
+<span>Исполнитель в пути</span>
+<strong id="active-eta">8 мин</strong>
+</div>
+<div class="status-chip" id="active-status">В пути</div>
+</div>
+</div>
+<div class="active-info-card">
+<div class="active-master-row">
+<div class="active-avatar" id="active-master-avatar">А</div>
+<div style="min-width: 0;">
+<h3 id="master-name">Александр</h3>
+<div class="master-rating" id="active-master-rating"><i class="fas fa-star"></i> 4.9 (512)</div>
+<div id="master-service" style="font-size: 12px; margin-top: 4px;">Шиномонтаж</div>
+</div>
+</div>
+<div class="active-details-grid">
+<div class="active-detail">
+<span>Автомобиль</span>
+<strong id="active-master-car">Peugeot Boxer, белый</strong>
+</div>
+<div class="active-detail">
+<span>Стоимость</span>
+<strong id="active-price">2 200 ₽</strong>
+</div>
+<div class="active-detail">
+<span>Адрес</span>
+<strong id="active-location">Ленинградское ш., 16к1</strong>
+</div>
+<div class="active-detail">
+<span>Статус</span>
+<strong id="active-order-label">Мастер едет</strong>
+</div>
+</div>
+</div>
+<div class="active-actions">
+<button class="active-action-btn" onclick="openChat('screen-active-order')"><i class="far fa-comment-dots"></i> Чат</button>
+<button type="button" class="active-action-btn" id="call-master-btn"><i class="fas fa-phone-alt"></i> Позвонить</button>
+</div>
+<div class="active-bottom-actions">
+<button class="btn btn-primary" onclick="completeOrder()">Работа выполнена</button>
+<button class="btn active-cancel-btn" onclick="cancelOrder()">Отменить заказ</button>
+</div>
+</div>
+<!-- 6. CHAT -->
+<div class="screen" id="screen-chat">
+<div class="screen-header">
+<i class="fas fa-chevron-left back-btn" onclick="goChatBack()"></i>
+<div class="screen-title">Чат с мастером</div>
+</div>
+<div class="chat-messages" id="chat-messages">
+<div class="message msg-master">
+                    Здравствуйте! Я уже в пути, буду через 20 минут.
+                    <span class="msg-time">10:15</span>
+</div>
+<div class="message msg-user">
+                    Хорошо, спасибо! Жду вас.
+                    <span class="msg-time">10:16 <i class="fas fa-check-double"></i></span>
+</div>
+<div class="message msg-master">
+                    Я на месте.
+                    <span class="msg-time">10:35</span>
+</div>
+<div class="message msg-master">
+                    Выходите, сейчас начнем.
+                    <span class="msg-time">10:36</span>
+</div>
+</div>
+<div class="chat-input-area">
+<input class="chat-input" id="chat-input" placeholder="Напишите сообщение..." type="text"/>
+<i class="fas fa-paperclip" style="color: var(--text-gray); font-size: 20px;"></i>
+<button class="chat-btn-circle" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+</div>
+</div>
+<!-- 7. EXECUTION -->
+<div class="screen" id="screen-execution">
+<div class="screen-header">
+<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-active-order')"></i>
+<div class="screen-title">Выполнение заказа</div>
+</div>
+<div class="execution-list">
+<div class="exec-step">
+<div class="exec-icon done"><i class="fas fa-check"></i></div>
+<span>Я на месте</span>
+</div>
+<div class="exec-step">
+<div class="exec-icon done"><i class="fas fa-check"></i></div>
+<span>Фото до выполнения</span>
+<i class="fas fa-camera exec-cam"></i>
+</div>
+<div class="exec-step">
+<div class="exec-icon current" style="background: black;">3</div>
+<span>Выполнение работ</span>
+<i class="fas fa-circle-notch fa-spin exec-cam"></i>
+</div>
+<div class="exec-step">
+<div class="exec-icon pending">4</div>
+<span>Фото после выполнения</span>
+<i class="fas fa-camera exec-cam"></i>
+</div>
+<div class="exec-step">
+<div class="exec-icon pending">5</div>
+<span>Завершить заказ</span>
+</div>
+</div>
+<div style="margin-top: auto; display:flex; flex-direction:column; gap: 10px;">
+<button class="btn btn-primary" onclick="completeOrder()">Завершить заказ</button>
+<button class="btn btn-secondary" onclick="cancelOrder()">Отменить заказ</button>
+</div>
+</div>
+<!-- 8. COMPLETED -->
+<div class="screen" id="screen-completed">
+<div class="screen-header">
+<div class="screen-title">Заказ завершен</div>
+</div>
+<div class="success-circle">
+<i class="fas fa-check"></i>
+</div>
+<h2 id="completed-title" style="font-size: 20px;">Заказ №123456 успешно завершен</h2>
+<div class="order-summary">
+<div class="summary-row">
+<span class="label">Статус</span>
+<span style="color: var(--accent-green); font-weight: 700;">Заказ выполнен</span>
+</div>
+<div class="summary-row">
+<span class="label">Сумма</span>
+<span id="completed-price" style="font-weight: 700;">1 500 ₽</span>
+</div>
+<div class="summary-row">
+<span class="label">Мастер</span>
+<span id="completed-master">Алексей</span>
+</div>
+<div class="summary-row">
+<span class="label">Рейтинг мастера</span>
+<span id="completed-master-rating"><i class="fas fa-star" style="color:#FFCC00;"></i> 4.9</span>
+</div>
+<div class="summary-row">
+<span class="label">Способ оплаты</span>
+<span><i class="far fa-credit-card"></i> Карта онлайн</span>
+</div>
+<div class="summary-row">
+<span class="label">Чек отправлен</span>
+<span>vash@email.ru</span>
+</div>
+</div>
+<div style="width:100%; text-align:left;">
+<div style="font-weight:700; margin-bottom: 8px;">Оцените заказ</div>
+<div class="rating-picker" id="rating-picker">
+<button class="rating-btn" onclick="setOrderRating(1)"><i class="fas fa-star"></i></button>
+<button class="rating-btn" onclick="setOrderRating(2)"><i class="fas fa-star"></i></button>
+<button class="rating-btn" onclick="setOrderRating(3)"><i class="fas fa-star"></i></button>
+<button class="rating-btn" onclick="setOrderRating(4)"><i class="fas fa-star"></i></button>
+<button class="rating-btn active" onclick="setOrderRating(5)"><i class="fas fa-star"></i></button>
+</div>
+<textarea class="review-field" id="review-input" placeholder="Оставьте отзыв о мастере"></textarea>
+</div>
+<button class="btn btn-primary" onclick="submitReviewAndFinish()" style="margin: 18px 0 40px;">Отправить</button>
+</div>
+<!-- 9. HISTORY -->
+<div class="screen" id="screen-history">
+<div class="screen-header">
+<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-home')"></i>
+<div class="screen-title">История заказов</div>
+</div>
+<div class="history-tabs">
+<div class="tab active" onclick="renderHistory('all')">Все</div>
+<div class="tab" onclick="renderHistory('active')">Активные</div>
+<div class="tab" onclick="renderHistory('completed')">Завершенные</div>
+<div class="tab" onclick="renderHistory('cancelled')">Отмененные</div>
+</div>
+<div class="history-list" id="history-list"></div>
+</div>
+<!-- 10. PROFILE -->
+<div class="screen" id="screen-profile">
+<div class="screen-header" style="justify-content: flex-start;">
+<img alt="Logo" src="assets/image-1.png" style="height:24px;"/>
+<p class="slogan" style="margin-left: 10px; margin-bottom: 0;">помощь на дороге 24/7</p>
+</div>
+<div class="profile-header">
+<div class="profile-img"><i class="fas fa-user"></i></div>
+	<div>
+	<h3 style="font-size: 18px;">Иван Петров</h3>
+	<p style="color: var(--text-gray); font-size: 14px;">+7 999 123-45-67</p>
+	</div>
+	<i class="fas fa-chevron-right" style="margin-left: auto; color: var(--text-gray);"></i>
+	</div>
+	<button class="role-switch-btn" onclick="switchRole('executor')">
+	<span><i class="fas fa-id-card-alt"></i> Перейти в режим исполнителя</span>
+	<i class="fas fa-chevron-right"></i>
+	</button>
+	<div class="profile-menu">
+<div class="menu-item" onclick="showScreen('screen-cars')">
+<i class="fas fa-car"></i>
+<span>Мои автомобили</span>
+<i class="fas fa-chevron-right"></i>
+</div>
+<div class="menu-item" onclick="showScreen('screen-payments')">
+<i class="far fa-credit-card"></i>
+<span>Способы оплаты</span>
+<i class="fas fa-chevron-right"></i>
+</div>
+<div class="menu-item" onclick="showScreen('screen-history')">
+<i class="fas fa-history"></i>
+<span>История заказов</span>
+<i class="fas fa-chevron-right"></i>
+</div>
+<div class="menu-item" onclick="showScreen('screen-favorites')">
+<i class="far fa-heart"></i>
+<span>Любимые мастера</span>
+<i class="fas fa-chevron-right"></i>
+</div>
+<div class="menu-item" onclick="showScreen('screen-support')">
+<i class="fas fa-headset"></i>
+<span>Поддержка</span>
+<i class="fas fa-chevron-right"></i>
+</div>
+<div class="menu-item" onclick="showScreen('screen-settings')">
+<i class="fas fa-cog"></i>
+<span>Настройки</span>
+<i class="fas fa-chevron-right"></i>
+</div>
+</div>
+<div class="exit-btn" onclick="showScreen('screen-onboarding')">Выйти</div>
+</div>
+<!-- 11. PROFILE MVP SCREENS -->
+<div class="screen" id="screen-cars">
+<div class="screen-header">
+<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-profile')"></i>
+<div class="screen-title">Мои автомобили</div>
+</div>
+<div class="profile-stub-list">
+<div class="profile-stub-card">
+<div class="profile-stub-icon"><i class="fas fa-car"></i></div>
+<div>
+<h3>Toyota Camry</h3>
+<p>Черный седан · R17 · основной автомобиль</p>
+</div>
+</div>
+<div class="profile-stub-card">
+<div class="profile-stub-icon"><i class="fas fa-plus"></i></div>
+<div>
+<h3>Добавить автомобиль</h3>
+<p>Марка, модель, цвет и размер колес для быстрых заказов.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="screen" id="screen-payments">
+<div class="screen-header">
+<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-profile')"></i>
+<div class="screen-title">Способы оплаты</div>
+</div>
+<div class="profile-stub-list">
+<div class="profile-stub-card">
+<div class="profile-stub-icon"><i class="far fa-credit-card"></i></div>
+<div>
+<h3>Карта онлайн</h3>
+<p>Visa ···· 2458 · используется по умолчанию</p>
+</div>
+</div>
+<div class="profile-stub-card">
+<div class="profile-stub-icon"><i class="fas fa-wallet"></i></div>
+<div>
+<h3>Оплата после работ</h3>
+<p>Наличными или переводом мастеру после завершения заказа.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="screen" id="screen-favorites">
+<div class="screen-header">
+<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-profile')"></i>
+<div class="screen-title">Любимые мастера</div>
+</div>
+<div class="profile-stub-list">
+<div class="profile-stub-card">
+<div class="profile-stub-icon"><i class="fas fa-star"></i></div>
+<div>
+<h3>Алексей</h3>
+<p>4.9 · 128 отзывов · шиномонтаж и помощь на дороге</p>
+</div>
+</div>
+</div>
+<div class="profile-empty-state">После завершения заказа мастера можно добавить в избранное.</div>
+</div>
+<div class="screen" id="screen-support">
+<div class="screen-header">
+<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-profile')"></i>
+<div class="screen-title">Поддержка</div>
+</div>
+<div class="profile-stub-list">
+<div class="profile-stub-card">
+<div class="profile-stub-icon"><i class="fas fa-headset"></i></div>
+<div>
+<h3>Чат поддержки</h3>
+<p>Обычно отвечаем за 2-3 минуты. Работаем круглосуточно.</p>
+</div>
+</div>
+<div class="profile-stub-card">
+<div class="profile-stub-icon"><i class="fas fa-phone-alt"></i></div>
+<div>
+<h3>Позвонить оператору</h3>
+<p>+7 800 555-24-07 · бесплатно по России</p>
+</div>
+</div>
+</div>
+</div>
+<div class="screen" id="screen-settings">
+<div class="screen-header">
+<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-profile')"></i>
+<div class="screen-title">Настройки</div>
+</div>
+<div class="profile-stub-list">
+<div class="profile-stub-card">
+<div class="profile-stub-icon"><i class="far fa-bell"></i></div>
+<div>
+<h3>Уведомления</h3>
+<p>Статусы заказа, сообщения мастера и чеки включены.</p>
+</div>
+</div>
+<div class="profile-stub-card">
+<div class="profile-stub-icon"><i class="fas fa-shield-alt"></i></div>
+<div>
+<h3>Безопасность</h3>
+<p>Вход по номеру телефона и подтверждение операций.</p>
+</div>
+</div>
+</div>
+</div>
+	<!-- 12. EXECUTOR FLOW -->
+	<div class="screen executor-screen" id="screen-exec-home">
+	<div class="executor-topbar">
+	<div class="executor-brand">Катим <span>ПРО</span></div>
+	<button class="executor-icon-btn"><i class="far fa-bell"></i></button>
+	</div>
+	<div class="exec-card exec-profile-card">
+	<div class="exec-avatar">А</div>
+	<div>
+	<h3>Александр</h3>
+	<div class="master-rating"><i class="fas fa-star"></i> 4.9 · эвакуатор · 7 лет опыта</div>
+	<div class="exec-online"><i class="fas fa-circle"></i> Онлайн</div>
+	</div>
+	<div class="toggle"></div>
+	</div>
+	<div class="exec-card exec-income-card">
+	<div class="muted">Сегодняшний доход</div>
+	<h2 id="exec-today-income">12 450 ₽</h2>
+	<div style="color:#74f196; font-size:12px; font-weight:800;">+15% к вчера</div>
+	<div class="exec-chart"><span style="height:22%"></span><span style="height:32%"></span><span style="height:28%"></span><span style="height:44%"></span><span style="height:40%"></span><span style="height:58%"></span><span style="height:74%"></span></div>
+	</div>
+	<div class="exec-stat-grid">
+	<div class="exec-stat"><strong id="exec-orders-count">6</strong><span>заказов</span></div>
+	<div class="exec-stat"><strong>4.9</strong><span>рейтинг</span></div>
+	<div class="exec-stat"><strong>2%</strong><span>отмена</span></div>
+	</div>
+	<div style="font-weight:800; margin-bottom:10px;">Быстрые действия</div>
+	<div class="quick-actions">
+	<button class="quick-action" onclick="showScreen('screen-exec-orders')"><i class="fas fa-car"></i>Заказы</button>
+	<button class="quick-action" onclick="showScreen('screen-exec-orders')"><i class="fas fa-map-marker-alt"></i>Карта</button>
+	<button class="quick-action" onclick="showScreen('screen-exec-income')"><i class="fas fa-chart-bar"></i>Доходы</button>
+	<button class="quick-action" onclick="showScreen('screen-exec-profile')"><i class="far fa-user"></i>Профиль</button>
+	</div>
+	<div class="exec-card">
+	<div class="exec-row"><strong>Бонус за серию</strong><i class="fas fa-gift" style="color:var(--gold); font-size:28px;"></i></div>
+	<div class="muted" style="margin:7px 0 10px;">Выполните 5 заказов сегодня</div>
+	<div style="height:6px; border-radius:99px; background:rgba(255,255,255,0.08); overflow:hidden;"><div style="width:72%; height:100%; background:linear-gradient(90deg,var(--gold),#ffd86b);"></div></div>
+	</div>
+	</div>
+	<div class="screen executor-screen" id="screen-exec-orders">
+	<div class="screen-header">
+	<div class="screen-title">Заказы</div>
+	<button class="executor-icon-btn"><i class="fas fa-sliders-h"></i></button>
+	</div>
+	<div class="executor-tabs">
+	<button class="active" onclick="renderExecutorOrders('new')">Новые</button>
+	<button onclick="renderExecutorOrders('active')">Активные</button>
+	<button onclick="renderExecutorOrders('completed')">Завершенные</button>
+	</div>
+	<div id="executor-orders-list"></div>
+	</div>
+	<div class="screen executor-screen" id="screen-exec-active">
+	<div class="screen-header">
+	<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-exec-orders')"></i>
+	<div class="screen-title">Активный заказ</div>
+	<button class="executor-icon-btn"><i class="fas fa-phone-alt"></i></button>
+	</div>
+	<div class="exec-card">
+	<div class="exec-row"><span class="status-chip">В пути к клиенту</span><span class="muted" id="exec-active-id">ID: #84215</span></div>
+	<h3 id="exec-active-service" style="margin:12px 0 5px;">Запуск двигателя</h3>
+	<div class="muted" id="exec-active-address">ул. Ленина, 15, Москва</div>
+	<div class="exec-row" style="margin-top:9px;"><span id="exec-active-car">Toyota Camry · Черный</span><strong id="exec-active-price">1 500 ₽</strong></div>
+	<div class="exec-route-map">
+	<div class="exec-map-pin car"><i class="fas fa-car-side"></i></div>
+	<div class="exec-map-pin dest"><i class="fas fa-map-marker-alt"></i></div>
+	</div>
+	</div>
+	<div class="exec-card exec-profile-card">
+	<div class="exec-avatar" style="width:48px;height:48px;border-radius:16px;">И</div>
+	<div>
+	<h3 id="exec-client-name">Иван Петров</h3>
+	<div class="muted">+7 (915) 123-45-67</div>
+	</div>
+	<button class="executor-icon-btn"><i class="fas fa-phone-alt"></i></button>
+	<button class="executor-icon-btn" onclick="openChat('screen-exec-active')"><i class="far fa-comment-dots"></i></button>
+	</div>
+	<div class="exec-card">
+	<div class="exec-row"><strong>Детали заказа</strong><i class="fas fa-chevron-right muted"></i></div>
+	<div class="exec-detail-list" style="margin-top:12px;">
+	<div class="exec-detail"><span class="muted">Комментарий клиента</span><br/><strong id="exec-active-comment">Сел аккумулятор, не заводится</strong></div>
+	<div class="exec-detail exec-row"><span class="muted">Создан</span><strong>09:32</strong></div>
+	<div class="exec-detail exec-row"><span class="muted">Способ оплаты</span><strong>Картой в приложении</strong></div>
+	</div>
+	</div>
+	<div class="active-bottom-actions">
+	<button class="btn btn-primary" onclick="executorArrived()">Я на месте</button>
+	<button class="btn btn-primary" onclick="completeExecutorOrder()">Завершить заказ</button>
+	</div>
+	</div>
+	<div class="screen executor-screen" id="screen-exec-income">
+	<div class="screen-header"><div class="screen-title">Доходы</div></div>
+	<div class="executor-tabs" id="exec-income-tabs"><button type="button" class="active" data-income-period="day">День</button><button type="button" data-income-period="week">Неделя</button><button type="button" data-income-period="month">Месяц</button></div>
+	<div class="exec-card exec-income-card">
+	<div class="muted">Сегодня</div>
+	<h2>12 450 ₽</h2>
+	<div style="color:#74f196; font-size:12px; font-weight:800;">+15% к вчера</div>
+	<div class="exec-chart" style="height:130px;"><span style="height:14%"></span><span style="height:26%"></span><span style="height:48%"></span><span style="height:42%"></span><span style="height:55%"></span><span style="height:82%"></span><span style="height:62%"></span><span style="height:28%"></span></div>
+	</div>
+	<div class="exec-card exec-detail-list">
+	<div class="exec-row"><span><i class="fas fa-car"></i> Заказы</span><strong>9 000 ₽</strong></div>
+	<div class="exec-row"><span><i class="fas fa-gift"></i> Бонусы</span><strong>2 200 ₽</strong></div>
+	<div class="exec-row"><span><i class="fas fa-coins"></i> Чаевые</span><strong>1 250 ₽</strong></div>
+	<div class="exec-row"><span><i class="fas fa-receipt"></i> Комиссия сервиса</span><strong>-2 000 ₽</strong></div>
+	</div>
+	<div class="exec-card">
+	<div class="exec-row"><h3>Баланс</h3><h3>28 350 ₽</h3></div>
+	<button class="btn btn-primary" style="margin-top:14px;">Вывести средства</button>
+	</div>
+	</div>
+	<div class="screen executor-screen" id="screen-exec-profile">
+	<div class="screen-header"><div class="screen-title">Профиль</div></div>
+	<div class="exec-card exec-profile-card" onclick="showScreen('screen-exec-docs')">
+	<div class="exec-avatar">А</div>
+	<div>
+	<h3>Александр</h3>
+	<div class="master-rating"><i class="fas fa-star"></i> 4.9 (128 отзывов)</div>
+	<div class="exec-online"><i class="fas fa-shield-alt"></i> Проверен</div>
+	</div>
+	<i class="fas fa-chevron-right muted" style="margin-left:auto;"></i>
+	</div>
+	<div class="exec-card exec-profile-card">
+	<div>
+	<h3>Mercedes Sprinter</h3>
+	<div class="muted">А 123 ВС 77 · белый</div>
+	</div>
+	<i class="fas fa-shuttle-van" style="margin-left:auto; font-size:42px; color:rgba(255,255,255,0.72);"></i>
+	</div>
+	<div class="profile-menu">
+	<div class="menu-item" onclick="showScreen('screen-exec-docs')"><i class="far fa-file-alt"></i><span>Мои документы</span><span class="doc-status">Проверено</span><i class="fas fa-chevron-right"></i></div>
+	<div class="menu-item"><i class="fas fa-car"></i><span>Транспорт</span><span class="muted">1 авто</span><i class="fas fa-chevron-right"></i></div>
+	<div class="menu-item"><i class="fas fa-chart-bar"></i><span>Статистика</span><i class="fas fa-chevron-right"></i></div>
+	<div class="menu-item"><i class="far fa-star"></i><span>Рейтинг и отзывы</span><i class="fas fa-chevron-right"></i></div>
+	<div class="menu-item"><i class="fas fa-cog"></i><span>Настройки</span><i class="fas fa-chevron-right"></i></div>
+	<div class="menu-item"><i class="far fa-question-circle"></i><span>Поддержка</span><i class="fas fa-chevron-right"></i></div>
+	</div>
+	<button class="role-switch-btn" onclick="switchRole('customer')"><span><i class="fas fa-user"></i> Вернуться в режим клиента</span><i class="fas fa-chevron-right"></i></button>
+	</div>
+	<div class="screen executor-screen" id="screen-exec-docs">
+	<div class="screen-header">
+	<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-exec-profile')"></i>
+	<div class="screen-title">Мои документы</div>
+	</div>
+	<div class="profile-menu">
+	<div class="menu-item"><i class="far fa-file-alt"></i><span>Паспорт</span><span class="doc-status">Проверено</span></div>
+	<div class="menu-item"><i class="far fa-id-card"></i><span>Водительское удостоверение</span><span class="doc-status">Проверено</span></div>
+	<div class="menu-item"><i class="far fa-file-alt"></i><span>СТС</span><span class="doc-status">Проверено</span></div>
+	<div class="menu-item"><i class="far fa-file-alt"></i><span>ОСАГО</span><span class="doc-status">Проверено</span></div>
+	<div class="menu-item"><i class="far fa-file-alt"></i><span>Разрешение</span><span class="doc-status">Проверено</span></div>
+	</div>
+	<button class="btn btn-primary" style="margin-top:auto;">Добавить документ</button>
+	</div>
+	<!-- Bottom Navigation -->
+	<nav class="bottom-nav hidden" id="global-nav">
+<div class="nav-item active" onclick="showScreen('screen-home')">
+<i class="fas fa-home"></i>
+<span>Главная</span>
+</div>
+<div class="nav-item" onclick="showScreen('screen-history')">
+<i class="fas fa-clipboard-list"></i>
+<span>Заказы</span>
+</div>
+<div class="nav-item" onclick="openChat('screen-active-order')">
+<i class="far fa-comment-dots"></i>
+<span>Чат</span>
+</div>
+<div class="nav-item" onclick="showScreen('screen-profile')">
+<i class="far fa-user"></i>
+<span>Профиль</span>
+	</div>
+	</nav>
+	<nav class="bottom-nav hidden" id="executor-nav">
+	<div class="nav-item active" onclick="showScreen('screen-exec-home')">
+	<i class="fas fa-home"></i>
+	<span>Главная</span>
+	</div>
+	<div class="nav-item" onclick="showScreen('screen-exec-orders')">
+	<i class="fas fa-clipboard-list"></i>
+	<span>Заказы</span>
+	</div>
+	<div class="nav-item" onclick="openChat('screen-exec-home')">
+	<i class="far fa-comment-dots"></i>
+	<span>Сообщения</span>
+	</div>
+	<div class="nav-item" onclick="showScreen('screen-exec-profile')">
+	<i class="far fa-user"></i>
+	<span>Профиль</span>
+	</div>
+	</nav>
+<!-- Home Indicator -->
+<div class="home-indicator"></div>
+</div>
+<script src="js/app.js" defer></script>
+
+</body>
+</html>
