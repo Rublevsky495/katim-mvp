@@ -2110,210 +2110,67 @@ textarea.field {
   z-index: 0 !important;
 }
 
-/* Mobile: keep search filters visible */
+/* Final clean search screen mobile layout */
 @media (max-width: 430px) {
   #screen-search.executor-search {
-    padding-top: 92px !important;
+    padding: 56px 14px 28px !important;
+    gap: 10px !important;
+    overflow-y: auto !important;
+  }
+
+  #screen-search .executor-header {
+    margin-bottom: 8px !important;
+    flex-shrink: 0 !important;
   }
 
   #screen-search .executor-filters {
+    display: flex !important;
     flex-shrink: 0 !important;
-    position: relative !important;
-    z-index: 30 !important;
-    margin-top: 8px !important;
-    margin-bottom: 14px !important;
+    align-items: center !important;
+    gap: 8px !important;
+    height: 46px !important;
+    min-height: 46px !important;
+    max-height: 46px !important;
+    padding: 4px 0 !important;
+    margin: 0 0 10px 0 !important;
     overflow-x: auto !important;
+    overflow-y: visible !important;
+    position: relative !important;
+    z-index: 50 !important;
   }
-}
 
-/* Mobile: tighten search map spacing */
-@media (max-width: 430px) {
+  #screen-search .executor-filter-btn,
+  #screen-search .executor-filter-btn.active {
+    height: 38px !important;
+    min-height: 38px !important;
+    max-height: 38px !important;
+    padding: 0 13px !important;
+    margin: 0 !important;
+    line-height: 38px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    transform: none !important;
+  }
+
   #screen-search .search-map {
-    margin-top: 0 !important;
-    margin-bottom: 10px !important;
+    width: 100% !important;
     height: 230px !important;
     min-height: 230px !important;
     flex: 0 0 230px !important;
-  }
-
-  #screen-search .offers-sheet {
-    margin-top: 0 !important;
-  }
-}
-
-/* Mobile: make search map image fill container */
-@media (max-width: 430px) {
-  #screen-search .search-map {
-    width: calc(100vw - 28px) !important;
-    max-width: none !important;
-    height: 260px !important;
-    min-height: 260px !important;
-    flex: 0 0 260px !important;
-    margin: 0 auto 12px !important;
+    margin: 0 0 12px 0 !important;
   }
 
   #screen-search .search-map-img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    transform: scale(1.04) !important;
-  }
-}
-
-/* Fix excessive top gap on search screen */
-@media (max-width: 430px) {
-  #screen-search.executor-search {
-    padding-top: 54px !important;
-    gap: 8px !important;
+    display: block !important;
   }
 
-  #screen-search .executor-header {
-    margin-bottom: 6px !important;
-  }
-
-  #screen-search .executor-filters {
+  #screen-search .offers-sheet {
     margin-top: 0 !important;
-    margin-bottom: 8px !important;
-    padding-bottom: 4px !important;
-    min-height: 48px !important;
-  }
-
-  #screen-search .search-map {
-    margin-top: 0 !important;
-    height: 250px !important;
-    min-height: 250px !important;
-    flex-basis: 250px !important;
-  }
-}
-
-/* Stable mobile search filters: active state must not change layout */
-@media (max-width: 430px) {
-  #screen-search.executor-search {
-    padding-top: 72px !important;
-    gap: 8px !important;
-  }
-
-  #screen-search .executor-filters {
-    height: 44px !important;
-    min-height: 44px !important;
-    max-height: 44px !important;
-    margin-top: 0 !important;
-    margin-bottom: 8px !important;
-    padding: 0 4px !important;
-    display: flex !important;
-    align-items: center !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    position: relative !important;
-    z-index: 40 !important;
-  }
-
-  #screen-search .executor-filter-btn,
-  #screen-search .executor-filter-btn.active {
-    height: 36px !important;
-    min-height: 36px !important;
-    max-height: 36px !important;
-    padding: 0 13px !important;
-    line-height: 36px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex: 0 0 auto !important;
-    white-space: nowrap !important;
-    transform: none !important;
-    margin: 0 !important;
-  }
-
-  #screen-search .search-map {
-    margin-top: 0 !important;
-    height: 250px !important;
-    min-height: 250px !important;
-    flex: 0 0 250px !important;
-  }
-}
-
-/* FINAL mobile search layout */
-@media (max-width: 430px) {
-  #screen-search.executor-search {
-    padding: 72px 14px 28px !important;
-    gap: 10px !important;
-    overflow-y: auto !important;
-  }
-
-  #screen-search .executor-header {
-    margin-bottom: 4px !important;
-    flex-shrink: 0 !important;
-  }
-
-  #screen-search .executor-filters {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: 48px !important;
-    min-height: 48px !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    padding: 0 2px 4px !important;
-    margin: 0 0 10px !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    flex-shrink: 0 !important;
-    box-sizing: border-box !important;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  #screen-search .executor-filter-btn,
-  #screen-search .executor-filter-btn.active {
-    flex: 0 0 auto !important;
-    height: 38px !important;
-    min-height: 38px !important;
-    max-height: 38px !important;
-    padding: 0 14px !important;
-    margin: 0 !important;
-    transform: none !important;
-    white-space: nowrap !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    line-height: 38px !important;
-  }
-
-  #screen-search .search-map {
-    width: 100% !important;
-    height: 235px !important;
-    min-height: 235px !important;
-    flex: 0 0 235px !important;
-    margin: 0 0 14px !important;
-  }
-}
-
-/* Fix filters being clipped under header on search screen */
-@media (max-width: 430px) {
-  #screen-search.executor-search {
-    padding-top: 64px !important;
-    overflow-y: auto !important;
-  }
-
-  #screen-search .executor-filters {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 80 !important;
-    background: #000 !important;
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
-    margin-top: 0 !important;
-    margin-bottom: 12px !important;
-    height: 56px !important;
-    min-height: 56px !important;
-    overflow-x: auto !important;
-    overflow-y: visible !important;
-  }
-
-  #screen-search .executor-filter-btn,
-  #screen-search .executor-filter-btn.active {
-    height: 40px !important;
-    min-height: 40px !important;
-    line-height: 40px !important;
-    padding: 0 14px !important;
   }
 }
