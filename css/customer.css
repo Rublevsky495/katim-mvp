@@ -2215,3 +2215,14 @@ textarea.field {
     margin-top: 0 !important;
   }
 }
+
+/* SOS/search screen: hide broken horizontal filters */
+@media (max-width: 430px) {
+  #screen-search .executor-filters {
+    display: none !important;
+  }
+
+  #screen-search .search-map {
+    margin-top: 8px !important;
+  }
+}
