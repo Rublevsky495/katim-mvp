@@ -2185,3 +2185,49 @@ textarea.field {
     flex-basis: 250px !important;
   }
 }
+
+/* Stable mobile search filters: active state must not change layout */
+@media (max-width: 430px) {
+  #screen-search.executor-search {
+    padding-top: 72px !important;
+    gap: 8px !important;
+  }
+
+  #screen-search .executor-filters {
+    height: 44px !important;
+    min-height: 44px !important;
+    max-height: 44px !important;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+    padding: 0 4px !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    position: relative !important;
+    z-index: 40 !important;
+  }
+
+  #screen-search .executor-filter-btn,
+  #screen-search .executor-filter-btn.active {
+    height: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+    padding: 0 13px !important;
+    line-height: 36px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+
+  #screen-search .search-map {
+    margin-top: 0 !important;
+    height: 250px !important;
+    min-height: 250px !important;
+    flex: 0 0 250px !important;
+  }
+}
