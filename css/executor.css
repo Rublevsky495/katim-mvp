@@ -304,6 +304,46 @@
     font-weight: 800;
 }
 
+.exec-bottom-cta {
+    margin-top: auto;
+}
+
+.exec-chart-large {
+    height: 128px;
+}
+
+.exec-chart-large span:nth-child(1) { height: 28%; }
+.exec-chart-large span:nth-child(2) { height: 46%; }
+.exec-chart-large span:nth-child(3) { height: 38%; }
+.exec-chart-large span:nth-child(4) { height: 62%; }
+.exec-chart-large span:nth-child(5) { height: 55%; }
+.exec-chart-large span:nth-child(6) { height: 84%; }
+.exec-chart-large span:nth-child(7) { height: 72%; }
+
+.exec-note {
+    color: rgba(255,255,255,0.62);
+    font-size: 13px;
+    line-height: 1.45;
+    margin-top: 8px;
+}
+
+.phone-link,
+.phone-text-link,
+.phone-icon-link,
+.phone-menu-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.phone-text-link {
+    color: var(--gold);
+    font-weight: 750;
+}
+
+.phone-menu-link {
+    display: flex;
+}
+
 .chat-messages {
     flex-grow: 1;
     overflow-y: auto;

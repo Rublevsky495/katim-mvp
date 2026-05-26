@@ -2728,6 +2728,7 @@
         /* Hide elements by default */
         .hidden { display: none; }
     </style>
+<link href="css/executor.css" rel="stylesheet"/>
 </head>
 <body>
 <div id="app-container">
@@ -3031,7 +3032,7 @@
 </div>
 <div class="active-actions">
 <button class="active-action-btn" onclick="openChat('screen-active-order')"><i class="far fa-comment-dots"></i> Чат</button>
-<button class="active-action-btn"><i class="fas fa-phone-alt"></i> Позвонить</button>
+<a class="active-action-btn phone-link" href="tel:+79808888837"><i class="fas fa-phone-alt"></i> Позвонить</a>
 </div>
 <div class="active-bottom-actions">
 <button class="btn btn-primary" onclick="completeOrder()">Работа выполнена</button>
@@ -3176,7 +3177,7 @@
 <div class="profile-img"><i class="fas fa-user"></i></div>
 	<div>
 	<h3 style="font-size: 18px;">Иван Петров</h3>
-	<p style="color: var(--text-gray); font-size: 14px;">+7 999 123-45-67</p>
+		<p style="color: var(--text-gray); font-size: 14px;"><a class="phone-text-link" href="tel:+79808888837">8 980 888-88-37</a></p>
 	</div>
 	<i class="fas fa-chevron-right" style="margin-left: auto; color: var(--text-gray);"></i>
 	</div>
@@ -3296,7 +3297,7 @@
 <div class="profile-stub-icon"><i class="fas fa-phone-alt"></i></div>
 <div>
 <h3>Позвонить оператору</h3>
-<p>+7 800 555-24-07 · бесплатно по России</p>
+<p><a class="phone-text-link" href="tel:+79808888837">8 980 888-88-37</a> · бесплатно по России</p>
 </div>
 </div>
 </div>
@@ -3378,7 +3379,7 @@
 	<div class="screen-header">
 	<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-exec-orders')"></i>
 	<div class="screen-title">Активный заказ</div>
-	<button class="executor-icon-btn"><i class="fas fa-phone-alt"></i></button>
+		<a class="executor-icon-btn phone-icon-link" href="tel:+79808888837" aria-label="Позвонить"><i class="fas fa-phone-alt"></i></a>
 	</div>
 	<div class="exec-card">
 	<div class="exec-row"><span class="status-chip">В пути к клиенту</span><span class="muted" id="exec-active-id">ID: #84215</span></div>
@@ -3394,9 +3395,9 @@
 	<div class="exec-avatar" style="width:48px;height:48px;border-radius:16px;">И</div>
 	<div>
 	<h3 id="exec-client-name">Иван Петров</h3>
-	<div class="muted">+7 (915) 123-45-67</div>
+		<a class="muted phone-text-link" href="tel:+79808888837">8 980 888-88-37</a>
 	</div>
-	<button class="executor-icon-btn"><i class="fas fa-phone-alt"></i></button>
+		<a class="executor-icon-btn phone-icon-link" href="tel:+79808888837" aria-label="Позвонить"><i class="fas fa-phone-alt"></i></a>
 	<button class="executor-icon-btn" onclick="openChat('screen-exec-active')"><i class="far fa-comment-dots"></i></button>
 	</div>
 	<div class="exec-card">
@@ -3452,11 +3453,11 @@
 	</div>
 	<div class="profile-menu">
 	<div class="menu-item" onclick="showScreen('screen-exec-docs')"><i class="far fa-file-alt"></i><span>Мои документы</span><span class="doc-status">Проверено</span><i class="fas fa-chevron-right"></i></div>
-	<div class="menu-item" onclick="alert('Раздел в разработке')"><i class="fas fa-car"></i><span>Транспорт</span><span class="muted">1 авто</span><i class="fas fa-chevron-right"></i></div>
-	<div class="menu-item" onclick="alert('Раздел в разработке')"><i class="fas fa-chart-bar"></i><span>Статистика</span><i class="fas fa-chevron-right"></i></div>
-	<div class="menu-item" onclick="alert('Раздел в разработке')"><i class="far fa-star"></i><span>Рейтинг и отзывы</span><i class="fas fa-chevron-right"></i></div>
-	<div class="menu-item" onclick="alert('Раздел в разработке')"><i class="fas fa-cog"></i><span>Настройки</span><i class="fas fa-chevron-right"></i></div>
-	<div class="menu-item" onclick="alert('Раздел в разработке')"><i class="far fa-question-circle"></i><span>Поддержка</span><i class="fas fa-chevron-right"></i></div>
+		<div class="menu-item" onclick="showScreen('screen-exec-transport')"><i class="fas fa-car"></i><span>Транспорт</span><span class="muted">1 авто</span><i class="fas fa-chevron-right"></i></div>
+		<div class="menu-item" onclick="showScreen('screen-exec-stats')"><i class="fas fa-chart-bar"></i><span>Статистика</span><i class="fas fa-chevron-right"></i></div>
+		<div class="menu-item" onclick="showScreen('screen-exec-reviews')"><i class="far fa-star"></i><span>Рейтинг и отзывы</span><i class="fas fa-chevron-right"></i></div>
+		<div class="menu-item" onclick="showScreen('screen-exec-settings')"><i class="fas fa-cog"></i><span>Настройки</span><i class="fas fa-chevron-right"></i></div>
+		<div class="menu-item" onclick="showScreen('screen-exec-support')"><i class="far fa-question-circle"></i><span>Поддержка</span><i class="fas fa-chevron-right"></i></div>
 	</div>
 	<button class="role-switch-btn" onclick="switchRole('customer')"><span><i class="fas fa-user"></i> Вернуться в режим клиента</span><i class="fas fa-chevron-right"></i></button>
 	</div>
@@ -3473,6 +3474,94 @@
 	<div class="menu-item"><i class="far fa-file-alt"></i><span>Разрешение</span><span class="doc-status">Проверено</span></div>
 	</div>
 	<button class="btn btn-primary" style="margin-top:auto;">Добавить документ</button>
+	</div>
+	<div class="screen executor-screen" id="screen-exec-transport">
+	<div class="screen-header">
+	<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-exec-profile')"></i>
+	<div class="screen-title">Транспорт</div>
+	</div>
+	<div class="exec-card exec-profile-card">
+	<div class="exec-avatar"><i class="fas fa-shuttle-van"></i></div>
+	<div>
+	<h3>Mercedes Sprinter</h3>
+	<div class="muted">А 123 ВС 77 · белый · эвакуатор</div>
+	<div class="exec-online"><i class="fas fa-shield-alt"></i> Проверен и допущен к заказам</div>
+	</div>
+	</div>
+	<div class="exec-detail-list">
+	<div class="exec-detail exec-row"><span class="muted">Госномер</span><strong>А 123 ВС 77</strong></div>
+	<div class="exec-detail exec-row"><span class="muted">Тип транспорта</span><strong>Эвакуатор</strong></div>
+	<div class="exec-detail exec-row"><span class="muted">Грузоподъемность</span><strong>2.5 т</strong></div>
+	<div class="exec-detail exec-row"><span class="muted">Статус</span><strong>Активен</strong></div>
+	</div>
+	<button class="btn btn-primary exec-bottom-cta">Добавить транспорт</button>
+	</div>
+	<div class="screen executor-screen" id="screen-exec-stats">
+	<div class="screen-header">
+	<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-exec-profile')"></i>
+	<div class="screen-title">Статистика</div>
+	</div>
+	<div class="exec-stat-grid">
+	<div class="exec-stat"><strong>128</strong><span>заказов</span></div>
+	<div class="exec-stat"><strong>4.9</strong><span>рейтинг</span></div>
+	<div class="exec-stat"><strong>97%</strong><span>принятие</span></div>
+	</div>
+	<div class="exec-card exec-income-card">
+	<div class="muted">Динамика заказов</div>
+	<div class="exec-chart exec-chart-large"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+	</div>
+	<div class="exec-detail-list">
+	<div class="exec-detail exec-row"><span class="muted">Среднее прибытие</span><strong>12 мин</strong></div>
+	<div class="exec-detail exec-row"><span class="muted">Отмены</span><strong>2%</strong></div>
+	<div class="exec-detail exec-row"><span class="muted">Повторные клиенты</span><strong>34</strong></div>
+	</div>
+	</div>
+	<div class="screen executor-screen" id="screen-exec-reviews">
+	<div class="screen-header">
+	<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-exec-profile')"></i>
+	<div class="screen-title">Рейтинг и отзывы</div>
+	</div>
+	<div class="exec-card">
+	<div class="exec-row"><h3>4.9</h3><span class="master-rating"><i class="fas fa-star"></i> 128 отзывов</span></div>
+	<div class="muted">Клиенты отмечают аккуратность, скорость и вежливость.</div>
+	</div>
+	<div class="exec-card">
+	<h3>Иван Петров</h3>
+	<div class="master-rating"><i class="fas fa-star"></i> 5.0</div>
+	<p class="exec-note">Приехал быстро, все объяснил и помог завести машину.</p>
+	</div>
+	<div class="exec-card">
+	<h3>Мария Смирнова</h3>
+	<div class="master-rating"><i class="fas fa-star"></i> 5.0</div>
+	<p class="exec-note">Аккуратно погрузил автомобиль, цена совпала с заказом.</p>
+	</div>
+	</div>
+	<div class="screen executor-screen" id="screen-exec-settings">
+	<div class="screen-header">
+	<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-exec-profile')"></i>
+	<div class="screen-title">Настройки</div>
+	</div>
+	<div class="profile-menu">
+	<div class="menu-item"><i class="far fa-bell"></i><span>Уведомления о заказах</span><span class="doc-status">Вкл</span></div>
+	<div class="menu-item"><i class="fas fa-map-marker-alt"></i><span>Геолокация</span><span class="doc-status">Вкл</span></div>
+	<div class="menu-item"><i class="far fa-credit-card"></i><span>Выплаты</span><span class="muted">СБП</span></div>
+	<div class="menu-item"><i class="fas fa-shield-alt"></i><span>Безопасность</span><i class="fas fa-chevron-right"></i></div>
+	</div>
+	</div>
+	<div class="screen executor-screen" id="screen-exec-support">
+	<div class="screen-header">
+	<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-exec-profile')"></i>
+	<div class="screen-title">Поддержка</div>
+	</div>
+	<div class="exec-card">
+	<h3>Поддержка исполнителей 24/7</h3>
+	<p class="exec-note">Поможем с заказом, документами, выплатами и спорными ситуациями.</p>
+	</div>
+	<div class="profile-menu">
+	<div class="menu-item"><i class="far fa-comment-dots"></i><span>Чат поддержки</span><span class="doc-status">Онлайн</span></div>
+		<a class="menu-item phone-menu-link" href="tel:+79808888837"><i class="fas fa-phone-alt"></i><span>Позвонить оператору</span><span class="muted">8 980 888-88-37</span></a>
+	<div class="menu-item"><i class="far fa-question-circle"></i><span>FAQ для исполнителей</span><i class="fas fa-chevron-right"></i></div>
+	</div>
 	</div>
 	<!-- Bottom Navigation -->
 	<nav class="bottom-nav hidden" id="global-nav">
@@ -3868,7 +3957,7 @@
 	            });
 	            executorNav.querySelectorAll('.nav-item').forEach(item => {
 	                item.classList.remove('active');
-	                const profileScreens = ['screen-exec-profile', 'screen-exec-docs'];
+	                const profileScreens = ['screen-exec-profile', 'screen-exec-docs', 'screen-exec-transport', 'screen-exec-stats', 'screen-exec-reviews', 'screen-exec-settings', 'screen-exec-support'];
 	                if (screenId === 'screen-exec-home' && item.innerText.includes('Главная')) item.classList.add('active');
 	                if (['screen-exec-orders', 'screen-exec-active'].includes(screenId) && item.innerText.includes('Заказы')) item.classList.add('active');
 	                if (profileScreens.includes(screenId) && item.innerText.includes('Профиль')) item.classList.add('active');
@@ -4054,15 +4143,5 @@
 
         showScreen('screen-home');
     </script>
-<script>
-document.addEventListener("click", function(e) {
-  const item = e.target.closest(".menu-item");
-  if (!item) return;
-  const text = item.innerText || "";
-  if (text.includes("Транспорт") || text.includes("Статистика") || text.includes("Рейтинг") || text.includes("Настройки") || text.includes("Поддержка")) {
-    alert("Раздел в разработке");
-  }
-});
-</script>
-</body>
-</html>
+	</body>
+	</html>

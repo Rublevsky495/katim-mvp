@@ -257,10 +257,10 @@ showScreen(role === 'executor' ? 'screen-exec-home' : 'screen-home');
 }
 
 function callActiveMaster() {
-    const tel = '+79991234567';
+    const tel = '+79808888837';
     window.location.href = 'tel:' + tel;
     if (!/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
-        showKatimToast('Наберите ' + tel);
+        showKatimToast('Наберите 8 980 888-88-37');
     }
 }
 
@@ -399,7 +399,7 @@ if (profileScreens.includes(screenId) && item.innerText.includes('Профиль
 });
 executorNav.querySelectorAll('.nav-item').forEach(item => {
 item.classList.remove('active');
-const profileScreens = ['screen-exec-profile', 'screen-exec-docs'];
+const profileScreens = ['screen-exec-profile', 'screen-exec-docs', 'screen-exec-transport', 'screen-exec-stats', 'screen-exec-reviews', 'screen-exec-settings', 'screen-exec-support'];
 if (screenId === 'screen-exec-home' && item.innerText.includes('Главная')) item.classList.add('active');
 if (['screen-exec-orders', 'screen-exec-active'].includes(screenId) && item.innerText.includes('Заказы')) item.classList.add('active');
 if (profileScreens.includes(screenId) && item.innerText.includes('Профиль')) item.classList.add('active');
