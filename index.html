@@ -3971,6 +3971,15 @@
         }
 
 	        function startSearch() {
+            setExecutorFilter('all');
+            setTimeout(() => {
+                const filters = document.querySelector('#screen-search .executor-filters');
+                if (filters) filters.scrollLeft = 0;
+            }, 0);
+            setTimeout(() => {
+                const filters = document.querySelector('#screen-search .executor-filters');
+                if (filters) filters.scrollLeft = 0;
+            }, 250);
 	            order.status = 'searching';
 	            order.selectedMasterId = null;
 	            executorFilter = serviceToFilter(order.serviceKey);
