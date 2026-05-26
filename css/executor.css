@@ -480,3 +480,15 @@
 .offer-card {
     display: grid;
 }
+
+/* Mobile: fix executor home scroll */
+@media (max-width: 500px) {
+  #screen-exec-home.active {
+    display: block !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    overflow-y: scroll !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 180px !important;
+  }
+}
