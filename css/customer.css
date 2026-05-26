@@ -1778,3 +1778,26 @@ textarea.field {
     margin-bottom: 24px !important;
   }
 }
+
+/* iPhone: history tabs and executor loyalty card spacing */
+@media (max-width: 430px) {
+  #screen-history {
+    padding-top: 72px !important;
+    padding-bottom: 150px !important;
+  }
+
+  #screen-history .history-tabs {
+    margin-top: 8px !important;
+    margin-bottom: 14px !important;
+    position: relative !important;
+    top: auto !important;
+  }
+
+  #screen-exec-home {
+    padding-bottom: 170px !important;
+  }
+
+  #screen-exec-home .exec-card:last-child {
+    margin-bottom: 120px !important;
+  }
+}
