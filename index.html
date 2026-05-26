@@ -3991,6 +3991,15 @@
         function setExecutorFilter(filter) {
             executorFilter = filter;
             renderMasterOffers();
+
+            const activeFilterBtn = document.querySelector('#screen-search .executor-filter-btn.active');
+            if (activeFilterBtn) {
+                activeFilterBtn.scrollIntoView({
+                    behavior: 'smooth',
+                    inline: 'center',
+                    block: 'nearest'
+                });
+            }
         }
 
         function renderMasterOffers() {
