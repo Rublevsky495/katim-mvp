@@ -1562,36 +1562,3 @@ textarea.field {
 .home-radar {
   transform: translateY(-18px) !important;
 }
-
-/* Tone down radar visual weight */
-.home-radar {
-  opacity: .82 !important;
-  width: 130px !important;
-  height: 130px !important;
-  box-shadow:
-    inset 0 0 18px rgba(255,196,0,.04),
-    0 0 12px rgba(255,196,0,.08) !important;
-}
-
-.home-radar::before {
-  background:
-    conic-gradient(
-      from 0deg,
-      rgba(255,196,0,.22),
-      rgba(255,196,0,.05) 28deg,
-      transparent 62deg
-    ) !important;
-}
-
-.radar-dot {
-  width: 4px !important;
-  height: 4px !important;
-  opacity: .72 !important;
-  box-shadow: 0 0 8px rgba(255,59,48,.55) !important;
-}
-
-.home-radar::after {
-  width: 8px !important;
-  height: 8px !important;
-  box-shadow: 0 0 10px rgba(255,196,0,.45) !important;
-}
