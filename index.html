@@ -3582,7 +3582,7 @@
 <i class="fas fa-clipboard-list"></i>
 <span>Заказы</span>
 </div>
-<div class="nav-item" onclick="openChat('screen-active-order')">
+<div class="nav-item" onclick="showScreen('screen-support')">
 <i class="far fa-comment-dots"></i>
 <span>Чат</span>
 </div>
@@ -3958,10 +3958,10 @@
 	
 	            nav.querySelectorAll('.nav-item').forEach(item => {
 	                item.classList.remove('active');
-	                const profileScreens = ['screen-profile', 'screen-cars', 'screen-payments', 'screen-favorites', 'screen-support', 'screen-settings'];
+	                const profileScreens = ['screen-profile', 'screen-cars', 'screen-payments', 'screen-favorites', 'screen-settings'];
 	                if (screenId === 'screen-home' && item.innerText.includes('Главная')) item.classList.add('active');
 	                if (screenId === 'screen-history' && item.innerText.includes('Заказы')) item.classList.add('active');
-	                if (screenId === 'screen-chat' && item.innerText.includes('Чат')) item.classList.add('active');
+	                if ((screenId === 'screen-chat' || screenId === 'screen-support') && item.innerText.includes('Чат')) item.classList.add('active');
 	                if (profileScreens.includes(screenId) && item.innerText.includes('Профиль')) item.classList.add('active');
 	            });
 	            executorNav.querySelectorAll('.nav-item').forEach(item => {
