@@ -2840,7 +2840,7 @@
 <div class="driver-services-block">
 <div class="section-label"><span>Сервисы для водителя</span></div>
 <div class="driver-services">
-<div class="driver-service-row" onclick="selectService('fines')">
+<div class="driver-service-row" onclick="openSoon('Оплата штрафов')">
 <div class="ds-icon"><i class="fas fa-file-invoice-dollar"></i></div>
 <div class="ds-text">
 <div class="ds-title">Оплата штрафов</div>
@@ -2848,7 +2848,7 @@
 </div>
 <i class="fas fa-chevron-right ds-arrow"></i>
 </div>
-<div class="driver-service-row" onclick="selectService('insurance')">
+<div class="driver-service-row" onclick="openSoon('Страховка')">
 <div class="ds-icon"><i class="fas fa-shield-alt"></i></div>
 <div class="ds-text">
 <div class="ds-title">Страховка</div>
@@ -2859,6 +2859,18 @@
 </div>
 </div>
 <!-- Nav bar is outside screens to be persistent, but for some we hide it. -->
+</div>
+<!-- Экран-заглушка "Скоро" -->
+<div class="screen" id="screen-soon">
+<div class="screen-header">
+<i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-home')"></i>
+<div class="screen-title" id="soon-title">Скоро</div>
+</div>
+<div class="soon-wrap">
+<div class="soon-icon"><i class="far fa-clock"></i></div>
+<div class="soon-heading">Скоро</div>
+<div class="soon-text">Этот раздел в разработке — мы уже работаем над ним. Скоро появится прямо здесь.</div>
+</div>
 </div>
 <!-- 3. ORDER CREATE -->
 <div class="screen" id="screen-order-create">
@@ -4161,6 +4173,12 @@
 
         document.getElementById('location-input').addEventListener('input', updateOrderView);
         document.getElementById('comment-input').addEventListener('input', updateOrderView);
+
+        function openSoon(name) {
+            var t = document.getElementById('soon-title');
+            if (t && name) t.textContent = name;
+            showScreen('screen-soon');
+        }
 
         showScreen('screen-home');
     </script>
