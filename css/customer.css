@@ -1558,3 +1558,7 @@ textarea.field {
   35%, 75% { opacity: 1; transform: scale(1); }
   100% { opacity: 0; transform: scale(.6); }
 }
+
+.home-radar {
+  transform: translateY(-18px) !important;
+}
