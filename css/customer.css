@@ -1528,8 +1528,8 @@ textarea.field {
 .home-radar::after {
   width: 10px !important;
   height: 10px !important;
-  background: #FFC400 !important;
-  box-shadow: 0 0 18px rgba(255,196,0,.7) !important;
+  background: #ff3b30 !important;
+  box-shadow: 0 0 18px rgba(255,59,48,.75) !important;
 }
 
 .radar-dot {
@@ -1537,10 +1537,10 @@ textarea.field {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #FFC400;
+  background: #ff3b30;
   opacity: 0;
   z-index: 4;
-  box-shadow: 0 0 12px rgba(255,196,0,.8);
+  box-shadow: 0 0 12px rgba(255,59,48,.85);
   animation: radarDot 3s ease-in-out infinite;
 }
 
