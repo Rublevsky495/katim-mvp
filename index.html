@@ -2058,11 +2058,12 @@
 
         /* HISTORY SCREEN */
         .history-tabs {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 8px;
-            margin-bottom: 16px;
-            overflow-x: auto;
-            padding-bottom: 5px;
+            margin: 16px 0 18px;
+            overflow: visible;
+            padding-bottom: 0;
         }
 
         .tab {
@@ -2072,6 +2073,11 @@
             border: 1px solid rgba(255,255,255,0.08);
             font-size: 12px;
             white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 0;
+            text-align: center;
         }
 
         .tab.active {
@@ -2726,7 +2732,7 @@
         /* Hide elements by default */
         .hidden { display: none; }
     </style>
-<link href="css/customer.css" rel="stylesheet"/>
+<link href="css/customer.css?v=2" rel="stylesheet"/>
 <link href="css/executor.css" rel="stylesheet"/>
 <link rel="stylesheet" href="css/search-screen.css?v=1">
 </head>
@@ -3168,11 +3174,11 @@
 <i class="fas fa-chevron-left back-btn" onclick="showScreen('screen-home')"></i>
 <div class="screen-title">История заказов</div>
 </div>
-<div class="history-tabs" style="margin-top:56px; position:relative; z-index:5;">
-<div class="tab active" onclick="renderHistory('all')">Все</div>
-<div class="tab" onclick="renderHistory('active')">Активные</div>
-<div class="tab" onclick="renderHistory('completed')">Завершенные</div>
-<div class="tab" onclick="renderHistory('cancelled')">Отмененные</div>
+<div class="history-tabs">
+<button class="tab history-filter active" type="button" onclick="renderHistory('all')">Все</button>
+<button class="tab history-filter" type="button" onclick="renderHistory('active')">Активные</button>
+<button class="tab history-filter" type="button" onclick="renderHistory('completed')">Завершенные</button>
+<button class="tab history-filter" type="button" onclick="renderHistory('cancelled')">Отмененные</button>
 </div>
 <div class="history-list" id="history-list"></div>
 </div>
@@ -3600,9 +3606,9 @@
 	<i class="fas fa-clipboard-list"></i>
 	<span>Заказы</span>
 	</div>
-	<div class="nav-item" onclick="openChat('screen-exec-home')">
-	<i class="far fa-comment-dots"></i>
-	<span>Сообщения</span>
+	<div class="nav-item" onclick="showScreen('screen-exec-support')">
+	<i class="fas fa-headset"></i>
+	<span>Поддержка</span>
 	</div>
 	<div class="nav-item" onclick="showScreen('screen-exec-profile')">
 	<i class="far fa-user"></i>
@@ -3966,10 +3972,11 @@
 	            });
 	            executorNav.querySelectorAll('.nav-item').forEach(item => {
 	                item.classList.remove('active');
-	                const profileScreens = ['screen-exec-profile', 'screen-exec-docs', 'screen-exec-transport', 'screen-exec-stats', 'screen-exec-reviews', 'screen-exec-settings', 'screen-exec-support'];
+	                const profileScreens = ['screen-exec-profile', 'screen-exec-docs', 'screen-exec-transport', 'screen-exec-stats', 'screen-exec-reviews', 'screen-exec-settings'];
 	                if (screenId === 'screen-exec-home' && item.innerText.includes('Главная')) item.classList.add('active');
 	                if (['screen-exec-orders', 'screen-exec-active'].includes(screenId) && item.innerText.includes('Заказы')) item.classList.add('active');
 	                if (profileScreens.includes(screenId) && item.innerText.includes('Профиль')) item.classList.add('active');
+	                if (screenId === 'screen-exec-support' && item.innerText.includes('Поддержка')) item.classList.add('active');
 	            });
 	        }
 
