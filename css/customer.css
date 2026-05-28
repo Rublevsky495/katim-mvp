@@ -1505,8 +1505,8 @@ textarea.field {
 
 /* Premium compact home radar */
 .home-radar {
-  width: 143px !important;
-  height: 143px !important;
+  width: 130px !important;
+  height: 130px !important;
   border-radius: 50% !important;
   overflow: hidden !important;
   background:
