@@ -1502,3 +1502,59 @@ textarea.field {
 .soon-icon { width: 84px; height: 84px; border-radius: 24px; background: var(--gold-soft); color: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 34px; }
 .soon-heading { font-size: 24px; font-weight: 700; color: var(--text-white); }
 .soon-text { font-size: 15px; color: var(--text-gray); max-width: 280px; line-height: 1.5; }
+
+/* Premium compact home radar */
+.home-radar {
+  width: 118px !important;
+  height: 118px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at center, rgba(255,196,0,.08), transparent 48%),
+    linear-gradient(35deg, transparent 47%, rgba(255,255,255,.05) 48%, transparent 49%),
+    linear-gradient(125deg, transparent 44%, rgba(255,255,255,.04) 45%, transparent 46%),
+    #080b10 !important;
+}
+
+.home-radar::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: 50% !important;
+  background: conic-gradient(from 0deg, rgba(255,196,0,.42), rgba(255,196,0,.08) 36deg, transparent 72deg) !important;
+  animation: radarSweep 3.2s linear infinite !important;
+}
+
+.home-radar::after {
+  width: 10px !important;
+  height: 10px !important;
+  background: #FFC400 !important;
+  box-shadow: 0 0 18px rgba(255,196,0,.7) !important;
+}
+
+.radar-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FFC400;
+  opacity: 0;
+  z-index: 4;
+  box-shadow: 0 0 12px rgba(255,196,0,.8);
+  animation: radarDot 3s ease-in-out infinite;
+}
+
+.dot-1 { left: 28%; top: 34%; animation-delay: .4s; }
+.dot-2 { right: 24%; top: 42%; animation-delay: 1s; }
+.dot-3 { left: 38%; bottom: 26%; animation-delay: 1.6s; }
+
+@keyframes radarSweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes radarDot {
+  0%, 20% { opacity: 0; transform: scale(.6); }
+  35%, 75% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(.6); }
+}
