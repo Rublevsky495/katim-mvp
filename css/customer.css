@@ -1522,7 +1522,7 @@ textarea.field {
   inset: 0 !important;
   border-radius: 50% !important;
   background: conic-gradient(from 0deg, rgba(255,196,0,.42), rgba(255,196,0,.08) 36deg, transparent 72deg) !important;
-  animation: radarSweep 5s linear infinite !important;
+  animation: radarSweep 3.2s linear infinite !important;
 }
 
 .home-radar::after {
