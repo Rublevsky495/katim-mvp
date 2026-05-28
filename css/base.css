@@ -86,7 +86,7 @@ body {
     }
 
     .screen {
-        padding-top: 50px;
+        padding-top: 16px;
         padding-bottom: 76px;
     }
 
@@ -264,7 +264,7 @@ body {
         linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0) 155px),
         var(--bg-color);
     padding: 20px;
-    padding-top: 60px; /* Status bar area */
+    padding-top: 20px; /* top spacing; real iOS status bar via safe-area below */
     padding-bottom: 90px; /* Nav bar area */
     overflow-y: auto;
     pointer-events: none;
@@ -374,6 +374,7 @@ body {
 
 @supports (padding: max(0px)) {
   .screen {
+    padding-top: max(20px, env(safe-area-inset-top));
     padding-bottom: max(110px, env(safe-area-inset-bottom));
   }
 

@@ -3,8 +3,17 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>Катим - Помощь на дороге 24/7</title>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Катим"/>
+<meta name="application-name" content="Катим"/>
+<meta name="theme-color" content="#080808"/>
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png"/>
+<link rel="manifest" href="site.webmanifest"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 <style>
         :root {
@@ -2723,15 +2732,7 @@
 </head>
 <body>
 <div id="app-container">
-<!-- Mock Status Bar -->
-<div class="status-bar">
-<span>9:41</span>
-<div style="display:flex; gap: 5px;">
-<i class="fas fa-signal"></i>
-<i class="fas fa-wifi"></i>
-<i class="fas fa-battery-full"></i>
-</div>
-</div>
+<!-- (mock status bar removed) -->
 <!-- 1. ONBOARDING -->
 <div class="screen" id="screen-onboarding">
 <img alt="Logo" class="logo-main" src="assets/image-1.png"/>
@@ -2792,21 +2793,6 @@
 <i class="fas fa-chevron-down" style="font-size: 10px;"></i>
 </div>
 <h2 class="home-title">Нужна помощь<br/>на дороге?</h2>
-<p class="home-lead">Проверенный мастер, понятная цена и прибытие рядом с вами.</p>
-<div class="home-metrics">
-<div>
-<strong>15-25</strong>
-<span>минут</span>
-</div>
-<div>
-<strong>4.9</strong>
-<span>рейтинг</span>
-</div>
-<div>
-<strong>24/7</strong>
-<span>сервис</span>
-</div>
-</div>
 </section>
 <div class="section-label">
 <span>Выберите услугу</span>
@@ -2850,6 +2836,27 @@
 <div class="sos-subtitle">Экстренная помощь, мастер приедет быстрее обычного</div>
 </div>
 <i class="fas fa-chevron-right sos-arrow"></i>
+</div>
+<div class="driver-services-block">
+<div class="section-label"><span>Сервисы для водителя</span></div>
+<div class="driver-services">
+<div class="driver-service-row" onclick="selectService('fines')">
+<div class="ds-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+<div class="ds-text">
+<div class="ds-title">Оплата штрафов</div>
+<div class="ds-desc">Проверка и оплата штрафов ГИБДД</div>
+</div>
+<i class="fas fa-chevron-right ds-arrow"></i>
+</div>
+<div class="driver-service-row" onclick="selectService('insurance')">
+<div class="ds-icon"><i class="fas fa-shield-alt"></i></div>
+<div class="ds-text">
+<div class="ds-title">Страховка</div>
+<div class="ds-desc">ОСАГО: оформить или продлить</div>
+</div>
+<i class="fas fa-chevron-right ds-arrow"></i>
+</div>
+</div>
 </div>
 <!-- Nav bar is outside screens to be persistent, but for some we hide it. -->
 </div>
